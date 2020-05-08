@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 
+add_compile_definitions(_GLIBCXX_USE_CXX11_ABI=0)
+
 if(NOT CMAKE_CUDA_FLAGS)
     set(CMAKE_CUDA_FLAGS "-cudart shared")
 endif()
