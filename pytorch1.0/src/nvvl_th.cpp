@@ -95,7 +95,7 @@ PYBIND11_MODULE(_nvvl, m) {
                .def("wait", (void (NVVL::PictureSequence::*)() const)
                     &NVVL::PictureSequence::wait)
                .def("wait_stream", [](NVVL::PictureSequence& seq) {
-                       seq.wait(THCState_getCurrentStream(state));
+                       seq.wait(c10::cuda::getCurrentCUDAStream());
                    });
 
 
